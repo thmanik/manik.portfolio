@@ -103,17 +103,17 @@ import { TbBrandCanva } from "react-icons/tb";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500 text-6xl" />, percentage: 90 },
-  { name: "CSS3", icon: <FaCss3Alt className="text-blue-500 text-6xl" />, percentage: 85 },
-  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500 text-6xl" />, percentage: 80 },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-600 text-6xl" />, percentage: 75 },
-  { name: "React.js", icon: <FaReact className="text-blue-400 text-6xl" />, percentage: 90 },
-  { name: "Next.js", icon: <SiNextdotjs className="text-gray-900 text-6xl" />, percentage: 85 },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500 text-6xl" />, percentage: 80 },
-  { name: "Express.js", icon: <SiExpress className="text-gray-600 text-6xl" />, percentage: 75 },
-  { name: "MongoDB", icon: <FaDatabase className="text-green-400 text-6xl" />, percentage: 80 },
-  { name: "Redux", icon: <SiRedux className="text-purple-500 text-6xl" />, percentage: 70 },
+  { name: "CSS3", icon: <FaCss3Alt className="text-blue-500 text-6xl" />, percentage: 90 },
+  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-500 text-6xl" />, percentage: 70 },
+  { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6] text-6xl" />, percentage: 70 },
+  { name: "React.js", icon: <FaReact className="text-blue-400 text-6xl" />, percentage: 85 },
+  { name: "Next.js", icon: <SiNextdotjs className="text-gray-900 text-6xl" />, percentage: 75 },
+  { name: "Node.js", icon: <FaNodeJs className="text-green-500 text-6xl" />, percentage: 50 },
+  { name: "Express.js", icon: <SiExpress className="text-gray-600 text-6xl" />, percentage: 60 },
+  { name: "MongoDB", icon: <FaDatabase className="text-green-400 text-6xl" />, percentage: 60 },
+  { name: "Redux", icon: <SiRedux className="text-purple-500 text-6xl" />, percentage: 75 },
   { name: "TailwindCSS", icon: <SiTailwindcss className="text-teal-400 text-6xl" />, percentage: 90 },
-  { name: "Bootstrap", icon: <SiBootstrap className="text-purple-600 text-6xl" />, percentage: 85 },
+  { name: "Bootstrap", icon: <SiBootstrap className="text-purple-600 text-6xl" />, percentage: 95 },
 ];
 
 const tools = [
@@ -139,7 +139,8 @@ const Skills = () => {
     <section className="py-12 bg-white text-gray-900">
       {/* Skills Section */}
       <div className="flex flex-col mx-5">
-        <h3 className="text-center text-3xl font-bold">Coding Skills</h3>
+        <h3 className="text-4xl font-extrabold text-gray-800 text-center">Coding Skills</h3>
+        <div className="w-16 h-1 bg-[#00BBA7] mx-auto mt-6"></div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-12 gap-5 mt-10 text-center">
           {skills.map((skill, index) => (
             <div key={index} className="col-span-1 md:col-span-2 bg-gray-100 p-6 rounded-lg shadow-md">
@@ -155,7 +156,8 @@ const Skills = () => {
 
       {/* Tools Section */}
       <div className="flex flex-col mx-5 mt-16">
-        <h3 className="text-center text-3xl font-bold">Tools</h3>
+        <h3 className="text-4xl font-extrabold text-gray-800 text-center">Tools</h3>
+        <div className="w-16 h-1 bg-[#00BBA7] mx-auto mt-6"></div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10 text-center">
           {tools.map((tool, index) => (
             <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">

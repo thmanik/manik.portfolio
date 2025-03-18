@@ -7,7 +7,7 @@ const About = () => {
     <div className="w-full md:w-[90%] px-4 my-10 mx-auto">
       {/* Title Section */}
       <div className="text-center">
-        <p className="text-2xl md:text-3xl font-extrabold text-gray-800">
+        <p className="text-4xl font-extrabold text-gray-800">
           About Me
         </p>
         <p className="text-md md:text-lg text-gray-600 mt-2">
@@ -17,6 +17,7 @@ const About = () => {
           </span>
           . I'm an aspiring web developer.
         </p>
+        <div className="w-16 h-1 bg-[#00BBA7] mx-auto mt-4"></div>
       </div>
 
       {/* Grid Layout */}
