@@ -8,6 +8,7 @@ import Link from "next/link";
 const navItems = [
   { name: "Home", link: "/home" },
   { name: "About", link: "/about" },
+  { name: "Skills", link: "/skills" },
   { name: "Resume", link: "/resume" },
   { name: "Services", link: "/services" },
   { name: "Portfolio", link: "/portfolio" },
@@ -36,13 +37,13 @@ const Header = () => {
              <Link
   href={item.link}
   className={`relative cursor-pointer text-gray-800 transition-colors duration-300 ${
-    pathname === item.link ? "text-teal-500 font-semibold" : "hover:text-teal-500"
+    pathname === item.link ? "text-teal-500 font-semibold" : "hover:text-teal-500 "
   }`}
 >
   {item.name}
   <span
     className={`absolute left-0 bottom-0 w-full h-[2px] bg-teal-400 transition-all duration-300 scale-x-0 origin-left ${
-      pathname === item.link ? "scale-x-100" : "hover:scale-x-100"
+      pathname === item.link ? "scale-x-100" : "hover:scale-x-100 "
     }`}
   ></span>
 </Link>
