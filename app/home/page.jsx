@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <section className="relative h-screen flex justify-center items-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:h-screen flex justify-center items-center overflow-hidden">
       {/* Background Image with Animation */}
       <div className="absolute inset-0 w-full h-full -z-10" data-aos="fade-in">
         <Image 
