@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+
+/* Add this in your global CSS or Tailwind's custom CSS file */
+@keyframes borderAnimation {
+  0% {
+    border-color: transparent;
+    border-left-color: #009BA9;
+  }
+  50% {
+    border-color: transparent;
+    border-right-color: #009BA9;
+  }
+  100% {
+    border-color: transparent;
+    border-top-color: #009BA9;
+  }
+}
+
+.animate-border {
+  animation: borderAnimation 4s linear infinite;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

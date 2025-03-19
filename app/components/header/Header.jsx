@@ -25,55 +25,60 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-gray-100 py-4 px-6 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold">Manik</h1>
+    <>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-gray-100 py-4 px-6 shadow-md z-50">
+        <div className="container mx-auto flex justify-between items-center">
+          {/* Logo */}
+          <h1 className="text-2xl font-bold">Manik</h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-gray-700">
-          {navItems.map((item, index) => (
-            <li key={index}>
-             <Link
-  href={item.link}
-  className={`relative cursor-pointer text-gray-800 transition-colors duration-300 ${
-    pathname === item.link ? "text-teal-500 font-semibold" : "hover:text-teal-500 "
-  }`}
->
-  {item.name}
-  <span
-    className={`absolute left-0 bottom-0 w-full h-[2px] bg-teal-400 transition-all duration-300 scale-x-0 origin-left ${
-      pathname === item.link ? "scale-x-100" : "hover:scale-x-100 "
-    }`}
-  ></span>
-</Link>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex space-x-6 text-gray-700">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  href={item.link}
+                  className={`relative cursor-pointer text-gray-800 transition-colors duration-300 ${
+                    pathname === item.link ? "text-teal-500 font-semibold" : "hover:text-teal-500"
+                  }`}
+                >
+                  {item.name}
+                  <span
+                    className={`absolute left-0 bottom-0 w-full h-[2px] bg-teal-400 transition-all duration-300 scale-x-0 origin-left ${
+                      pathname === item.link ? "scale-x-100" : "hover:scale-x-100"
+                    }`}
+                  ></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-            </li>
-          ))}
-        </ul>
-
-        {/* Desktop Social Icons */}
-        <div className="hidden md:flex space-x-3 text-gray-500">
-          <FaFacebookF className="cursor-pointer hover:text-gray-700" />
-          <FaInstagram className="cursor-pointer hover:text-gray-700" />
-          <FaLinkedin className="cursor-pointer hover:text-gray-700" />
-        </div>
-
-        {/* Mobile Header */}
-        <div className="md:hidden flex items-center gap-4">
-          {/* Social Icons */}
-          <div className="flex space-x-3 text-gray-500">
+          {/* Desktop Social Icons */}
+          <div className="hidden md:flex space-x-3 text-gray-500">
             <FaFacebookF className="cursor-pointer hover:text-gray-700" />
             <FaInstagram className="cursor-pointer hover:text-gray-700" />
             <FaLinkedin className="cursor-pointer hover:text-gray-700" />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button onClick={toggleMenu}>
-            {isOpen ? <RxCross2 size={24} /> : <RxHamburgerMenu size={24} />}
-          </button>
+          {/* Mobile Header */}
+          <div className="md:hidden flex items-center gap-4">
+            {/* Social Icons */}
+            <div className="flex space-x-3 text-gray-500">
+              <FaFacebookF className="cursor-pointer hover:text-gray-700" />
+              <FaInstagram className="cursor-pointer hover:text-gray-700" />
+              <FaLinkedin className="cursor-pointer hover:text-gray-700" />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button onClick={toggleMenu}>
+              {isOpen ? <RxCross2 size={24} /> : <RxHamburgerMenu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
+
+      {/* Push content down to avoid overlap */}
+      <div className="pt-16"></div>
 
       {/* Mobile Sidebar */}
       <div
@@ -100,7 +105,7 @@ const Header = () => {
           ))}
         </ul>
       </div>
-    </nav>
+    </>
   );
 };
 
