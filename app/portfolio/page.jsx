@@ -1,66 +1,115 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 const projects = [
   {
     id: 1,
     name: "AllNeedzMart",
-    description: "This is an Ecommerce website with having exciting feature like order tracking , thank you page, warrantry claim",
-    technologies: ["Next.js", "TypeScript", "Redux Toolkit ","Tailwind CSS","shadcn/ui"],
-    image: "/images/allneedsmart/allneezmart.png",
-    link: "/project-details/1", // Link to the details page
-  },   
+    description: "This is an Ecommerce website with exciting features like order tracking, thank you page, warranty claim.",
+    technologies: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "shadcn/ui"],
+    image: "/images/allneedsmart/scroolimage.png",
+    link: "/project-details/1",
+  },
   {
     id: 2,
     name: "Oneselfbd",
     description: "A modern web app design.",
-    technologies: ["Next.js", "TypeScript", "Redux Toolkit ","Tailwind CSS","shadcn/ui"],
-    image: "/images/oneself/home.png",
-    link: "/project-details/2", // Link to the details page
+    technologies: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "shadcn/ui"],
+    image: "/images/oneself/scrollingPhoto.png",
+    link: "/project-details/2",
   },
   {
     id: 3,
     name: "TravelTrek",
     description: "An innovative project concept.",
-    technologies: ["MUI", "Tailwind","React.js", "Firebase"," Node.js", "MongoDB(MVC)","Express"],
-   
-    image: "/your-image-3.jpg",
-    link: "/project-details/3", // Link to the details page
+    technologies: ["MUI", "Tailwind", "React.js", "Firebase", "Node.js", "MongoDB(MVC)", "Express"],
+    image: "/images/Traveltrek/scrolling.png",
+    link: "/project-details/3",
   },
   {
     id: 4,
+    name: "BOOK COLLEGE",
+    description: "An innovative project concept.",
+    technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
+    image: "/images/bookCollege/homeScrool.png",
+    link: "/project-details/3",
+  },
+  {
+    id: 5,
     name: "NextJS Material Kit.",
     description: "An innovative project concept.",
     technologies: ["HTML5", "CSS3"],
-   
-    image: "/your-image-3.jpg",
-    link: "/project-details/3", // Link to the details page
+    image: "/images/nextkit/homesrcoll.png",
+    link: "/project-details/3",
+  },
+  
+  {
+    id: 6,
+    name: "MIL School",
+    description: "An innovative project concept.",
+    technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
+    image: "/images/milclub/homeScroll.png",
+    link: "/project-details/3",
+  },
+  {
+    id: 7,
+    name: "TOY BOX",
+    description: "An innovative project concept.",
+    technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
+    image: "/images/toybok/homeScroll.png",
+    link: "/project-details/3",
   },
 ];
 
 const Portfolio = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleRemoveBlur = (id) => {
+    setActiveCard(id);
+  };
+
   return (
     <section className="container mx-auto py-16 px-4">
       <h2 className="text-4xl font-semibold text-center mb-12">My Portfolio</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative bg-white rounded-lg shadow-lg overflow-hidden"
+            className="relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
           >
-            {/* Image Container */}
-            <div className="h-64 overflow-hidden">
-              <Image width={1000} height={1000}
+            {/* Image Container with Scroll Effect */}
+            <div className="w-full overflow-hidden relative h-64">
+              <Image
                 src={project.image}
                 alt={project.name}
-                className="w-full h-full object-cover"
+                layout="responsive"
+                width={800}
+                height={600}
+                className={`object-cover w-full h-full transition-transform duration-4500
+                ${activeCard === project.id ? "translate-y-[-70%]" : ""}`}
               />
+
+              {/* Blur Overlay (Initially Visible, Removes on Click) */}
+              <div
+                className={`absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md transition-all duration-1000 
+                ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
+              ></div>
+
+              {/* Scroll-to-Top Indication Button */}
+              <button
+                className={`absolute bottom-4 right-4 cursor-pointer bg-black text-white p-2 rounded-full transition-opacity duration-1000
+                ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
+                onClick={() => handleRemoveBlur(project.id)}
+              >
+                <div className="opacity-100 bg-black">⬆️</div>
+              </button>
             </div>
 
             {/* Card Body */}
-            <div className="p-6">
+            <div className="flex-1 p-6">
               <h3 className="text-2xl font-semibold text-gray-800">{project.name}</h3>
-              
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -75,9 +124,9 @@ const Portfolio = () => {
             </div>
 
             {/* Card Footer with Details Button */}
-            <div className="bg-gray-800 text-white p-4 flex justify-center">
+            <div className="bg-gray-800 text-white p-4 flex justify-center mt-auto">
               <a
-                href={project.link} // Link to project details page
+                href={project.link}
                 className="flex items-center justify-center p-3 bg-gray-600 hover:bg-gray-700 rounded-full"
               >
                 <span className="ml-2">Details</span>
