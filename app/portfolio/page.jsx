@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -62,11 +63,17 @@ const projects = [
   },
 ];
 
+
 const Portfolio = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const router = useRouter();
 
   const handleRemoveBlur = (id) => {
     setActiveCard(id);
+  };
+
+  const handleNavigate = (id) => {
+    router.push(`/portfolio/${id}`);
   };
 
   return (
@@ -79,7 +86,6 @@ const Portfolio = () => {
             key={project.id}
             className="relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
           >
-            {/* Image Container with Scroll Effect */}
             <div className="w-full overflow-hidden relative h-64">
               <Image
                 src={project.image}
@@ -91,23 +97,20 @@ const Portfolio = () => {
                 ${activeCard === project.id ? "translate-y-[-70%]" : ""}`}
               />
 
-              {/* Blur Overlay (Initially Visible, Removes on Click) */}
               <div
                 className={`absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md transition-all duration-1000 
                 ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
               ></div>
 
-              {/* Scroll-to-Top Indication Button */}
               <button
                 className={`absolute bottom-4 right-4 cursor-pointer bg-black text-white p-2 rounded-full transition-opacity duration-1000
                 ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
                 onClick={() => handleRemoveBlur(project.id)}
               >
-                <div className="opacity-100 bg-black">⬆️</div>
+                ⬆️
               </button>
             </div>
 
-            {/* Card Body */}
             <div className="flex-1 p-6">
               <h3 className="text-2xl font-semibold text-gray-800">{project.name}</h3>
 
@@ -123,14 +126,14 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Card Footer with Details Button */}
             <div className="bg-gray-800 text-white p-4 flex justify-center mt-auto">
-              <a
-                href={project.link}
-                className="flex items-center justify-center p-3 bg-gray-600 hover:bg-gray-700 rounded-full"
+              <button
+                onClick={() => handleNavigate(project.id)}
+                
+                className="flex items-center justify-center cursor-pointer p-3 bg-gray-600 hover:bg-gray-700 rounded-full"
               >
                 <span className="ml-2">Details</span>
-              </a>
+              </button>
             </div>
           </div>
         ))}
