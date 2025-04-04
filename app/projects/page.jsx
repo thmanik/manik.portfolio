@@ -64,7 +64,7 @@ const projects = [
 ];
 
 
-const Portfolio = () => {
+const Projects = () => {
   const [activeCard, setActiveCard] = useState(null);
   const router = useRouter();
 
@@ -73,13 +73,13 @@ const Portfolio = () => {
   };
 
   const handleNavigate = (id) => {
-    router.push(`/portfolio/${id}`);
+    router.push(`/projects/${id}`);
   };
 
   return (
     <section className="container mx-auto py-8 md:py-16 px-4">
      <div className="mb-12">
-     <h2 className="text-4xl font-semibold text-center ">My Portfolio</h2>
+     <h2 className="text-4xl font-semibold text-center ">My Projects</h2>
      <div className="w-20 h-1 bg-[#00BBA7] mx-auto mt-4  rounded-md"></div>
      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -144,4 +144,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;

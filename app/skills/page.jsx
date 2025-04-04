@@ -145,9 +145,9 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div key={index} className="col-span-1 md:col-span-2 bg-gray-100 p-6 rounded-lg shadow-md" data-aos="zoom-in-up">
               <div className="flex justify-center">{skill.icon}</div>
-              <h2 className="text-4xl font-bold mt-3">
+              {/* <h2 className="text-4xl font-bold mt-3">
                 <CountUp start={0} end={skill.percentage} duration={2} delay={0.2} />%
-              </h2>
+              </h2> */}
               <p className="mt-2 text-lg">{skill.name}</p>
             </div>
           ))}
