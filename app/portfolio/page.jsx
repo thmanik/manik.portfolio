@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
 const projects = [
   {
     id: 1,
@@ -77,14 +77,16 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="container mx-auto py-16 px-4">
-      <h2 className="text-4xl font-semibold text-center mb-12">My Portfolio</h2>
-
+    <section className="container mx-auto py-8 md:py-16 px-4">
+     <div className="mb-12">
+     <h2 className="text-4xl font-semibold text-center ">My Portfolio</h2>
+     <div className="w-20 h-1 bg-[#00BBA7] mx-auto mt-4  rounded-md"></div>
+     </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+            className="relative bg-white  rounded-lg shadow-lg transition-transform duration-800 hover:-translate-y-2 overflow-hidden flex flex-col" data-aos="fade-up"
           >
             <div className="w-full overflow-hidden relative h-64">
               <Image
@@ -93,7 +95,7 @@ const Portfolio = () => {
                 layout="responsive"
                 width={800}
                 height={600}
-                className={`object-cover w-full h-full transition-transform duration-4500
+                className={`object-cover w-full h-full transition-transform duration-[4500ms]
                 ${activeCard === project.id ? "translate-y-[-70%]" : ""}`}
               />
 
@@ -102,13 +104,13 @@ const Portfolio = () => {
                 ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
               ></div>
 
-              <button
-                className={`absolute bottom-4 right-4 cursor-pointer bg-black text-white p-2 rounded-full transition-opacity duration-1000
-                ${activeCard === project.id ? "opacity-0" : "opacity-50"}`}
-                onClick={() => handleRemoveBlur(project.id)}
-              >
-                ⬆️
-              </button>
+<button
+  onClick={() => handleRemoveBlur(project.id)}
+  className={`absolute bottom-4 right-4 z-10 bg-[#00BBA7] text-white cursor-pointer p-2 rounded-full shadow-md hover:scale-110 transition-all duration-500
+  ${activeCard === project.id ? "opacity-0" : "opacity-90"}`}
+>
+  <ArrowUpCircleIcon className="w-6 h-6 text-white" />
+</button>
             </div>
 
             <div className="flex-1 p-6">

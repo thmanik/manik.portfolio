@@ -1,18 +1,16 @@
 "use client";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 
 const navItems = [
   { name: "Home", link: "/home" },
   { name: "About", link: "/about" },
-  { name: "Skills", link: "/skills" },
   { name: "Resume", link: "/resume" },
-  { name: "Services", link: "/services" },
+  { name: "Skills", link: "/skills" },
   { name: "Portfolio", link: "/portfolio" },
-  { name: "Dropdown", link: "/dropdown" },
   { name: "Contact", link: "/contact" },
 ];
 
@@ -55,18 +53,31 @@ const Header = () => {
 
           {/* Desktop Social Icons */}
           <div className="hidden md:flex space-x-3 text-gray-500">
-            <FaFacebookF className="cursor-pointer hover:text-gray-700" />
-            <FaInstagram className="cursor-pointer hover:text-gray-700" />
-            <FaLinkedin className="cursor-pointer hover:text-gray-700" />
-          </div>
+  <a href="https://www.facebook.com/mdmanik.ahmed.90038882" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="cursor-pointer text-lg hover:text-blue-600" />
+  </a>
+  <a href="https://github.com/thmanik" target="_blank" rel="noopener noreferrer">
+    <FaGithub className="cursor-pointer text-lg hover:text-gray-700" />
+  </a>
+  <a href="https://www.linkedin.com/in/md-tofazzol-hossain-manik-764544299" target="_blank" rel="noopener noreferrer">
+    <FaLinkedin className="cursor-pointer text-lg hover:text-blue-700" />
+  </a>
+</div>
+
 
           {/* Mobile Header */}
           <div className="md:hidden flex items-center gap-4">
             {/* Social Icons */}
             <div className="flex space-x-3 text-gray-500">
-              <FaFacebookF className="cursor-pointer hover:text-gray-700" />
-              <FaInstagram className="cursor-pointer hover:text-gray-700" />
-              <FaLinkedin className="cursor-pointer hover:text-gray-700" />
+            <a href="https://www.facebook.com/mdmanik.ahmed.90038882" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="cursor-pointer hover:text-blue-600" />
+  </a>
+  <a href="https://github.com/thmanik" target="_blank" rel="noopener noreferrer">
+    <FaGithub className="cursor-pointer hover:text-gray-700" />
+  </a>
+  <a href="https://www.linkedin.com/in/md-tofazzol-hossain-manik-764544299" target="_blank" rel="noopener noreferrer">
+    <FaLinkedin className="cursor-pointer hover:text-blue-700" />
+  </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -82,29 +93,34 @@ const Header = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-3/4 h-full bg-gray-100 shadow-lg transform transition-transform duration-300 z-50 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <button className="absolute top-5 right-5" onClick={toggleMenu}>
-          <RxCross2 size={28} />
-        </button>
+  className={`fixed top-0 right-0 w-3/4 h-full bg-[#1E2939] shadow-lg transform transition-transform duration-300 z-50 ${
+    isOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
+  <button className="absolute top-5 right-5 text-white" onClick={toggleMenu}>
+    <RxCross2 size={28} />
+  </button>
 
-        <ul className="flex flex-col items-center mt-16 space-y-6 text-gray-700">
-          {navItems.map((item, index) => (
-            <li key={index} onClick={toggleMenu}>
-              <Link
-                href={item.link}
-                className={`text-lg ${
-                  pathname === item.link ? "text-teal-500 font-semibold" : "hover:text-teal-500"
-                } cursor-pointer`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+  <ul className="flex flex-col items-center mt-16 space-y-4 text-white">
+    {navItems.map((item, index) => (
+      <li
+        key={index}
+        onClick={toggleMenu}
+        className={`w-3/4  ${pathname == item.link ? " border border-teal-700":" border  border-white"}rounded-lg text-center py-3 transition-all duration-200 hover:bg-teal-500 hover:text-white cursor-pointer`}
+      >
+        <Link
+          href={item.link}
+          className={`block w-full text-lg ${
+            pathname == item.link ? "text-teal-700 font-semibold  " : "hover:text-white"
+          }`}
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
     </>
   );
 };

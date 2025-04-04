@@ -23,36 +23,35 @@ const Footer = () => {
 
       {/* Social Icons */}
       <div className="flex justify-center space-x-4 mt-4">
-        <a href="#" className="p-3 border rounded-full hover:bg-gray-200 transition">
+        <a href="https://github.com/thmanik" className="p-3 border rounded-full text-gray-800 hover:text-gray-950 transition">
           <FaGithub size={20} />
         </a>
-        <a href="#" className="p-3 border rounded-full hover:bg-gray-200 transition">
+        <a href="https://www.facebook.com/mdmanik.ahmed.90038882" className="p-3 border rounded-full  hover:text-blue-600 transition">
           <FaFacebookF size={20} />
         </a>
-        <a href="#" className="p-3 border rounded-full hover:bg-gray-200 transition">
+        <a href="https://www.linkedin.com/in/md-tofazzol-hossain-manik-764544299" className="p-3 border rounded-full hover:text-blue-700 transition">
           <FaLinkedin size={20} />
         </a>
       </div>
-
-      {/* Dropdown Section */}
+    
+ 
+       {/* Call-to-Action Section */}
       <div className="mt-6">
-        <button
-          className="flex items-center justify-center mx-auto px-4 py-2 bg-teal-500 text-white rounded-md"
+        <a
+        href="mailto:thmanik1241@gmail.com"
+          className="flex items-center justify-center w-32 mx-auto px-4 py-2 bg-teal-500 text-white rounded-md"
           onClick={toggleDropdown}
         >
-          More Info {isDropdownOpen ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} />}
-        </button>
+          Get in Touch
+        </a>
 
-        {isDropdownOpen && (
-          <div className="mt-4 p-4 bg-white shadow-md rounded-md">
-            <p className="text-gray-700">This is additional information in the dropdown.</p>
-          </div>
-        )}
+        
+        
       </div>
 
       {/* Scroll to Top Button */}
       <button
-        className="fixed bottom-6 right-6 bg-teal-500 text-white p-3 rounded-full shadow-md hover:bg-teal-600 transition"
+        className="fixed bottom-6 right-6 cursor-pointer bg-teal-500 text-white p-3 rounded-full shadow-md hover:bg-teal-600 transition"
         onClick={scrollToTop}
       >
         <MdKeyboardArrowUp size={24} />

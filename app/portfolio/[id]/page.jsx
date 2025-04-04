@@ -3,8 +3,9 @@
 import { notFound } from "next/navigation";
 import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
-import { IoIosMale, IoMdRadioButtonOn } from "react-icons/io";
-// Dynamically import Carousel component to disable SSR
+
+import { IoIosLink, IoLogoGithub, IoMdRadioButtonOn } from "react-icons/io";
+
 const Carousel = dynamic(() => import('react-responsive-carousel').then(mod => mod.Carousel), { ssr: false });
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -21,7 +22,8 @@ const projects = [
       ],
       technologies: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "shadcn/ui"],
       images: ["/images/allneedsmart/allneezmart.png", "/images/allneedsmart/orderTracking.png", "/images/allneedsmart/shoppage.png"],
-      link: "/project-details/1",
+      live_link: "https://allneedzmart.com",
+      confidential:true,
     },
     {
       id: 2,
@@ -34,7 +36,8 @@ const projects = [
       ],
       technologies: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "shadcn/ui"],
       images: ["/images/oneself/home.png", "/images/oneself/productpage.png", "/images/oneself/checkout.png"],
-      link: "/project-details/2",
+      live_link: "https://mustaqim.site",
+      confidential:true,
     },
     {
       id: 3,
@@ -47,6 +50,9 @@ const projects = [
       ],
       technologies: ["MUI", "Tailwind", "React.js", "Firebase", "Node.js", "MongoDB(MVC)", "Express"],
       images: ["/images/Traveltrek/homePage.png", "/images/Traveltrek/findeticket.png"],
+      live_link: "https://traveltrek-6303c.web.app",
+      client_code_link: "https://github.com/Flex-Softr/Bus-Ticket-Booking-Solution/tree/latest-achieve/Client",
+      server_code_link: "https://github.com/Flex-Softr/Bus-Ticket-Booking-Solution/tree/latest-achieve/Server",
     },
     {
       id: 4,
@@ -58,6 +64,9 @@ const projects = [
       ],
       technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
       images: ["/images/bookCollege/homepage.png", "/images/bookCollege/aboutSection.png", "/images/bookCollege/footer.png"],
+      live_link: "https://book-colleges.web.app",
+      client_code_link: "https://github.com/thmanik/book-colleges-client",
+      server_code_link: "https://github.com/thmanik/book-colleges-server",
     },
     {
       id: 5,
@@ -68,6 +77,9 @@ const projects = [
       ],
       technologies: ["HTML5", "CSS3"],
       images: ["/images/nextkit/home.png", "/images/nextkit/homepage2.png", "/images/nextkit/navigation.png"],
+      live_link: "https://symphonious-peony-d4a50a.netlify.app",
+      client_code_link: "https://github.com/thmanik/nextjs-material-kit",
+      
     },
     
     {
@@ -81,6 +93,9 @@ const projects = [
       ],
       technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
       images: ["/images/milclub/home.png","/images/milclub/instructor.png"],
+      live_link: "https://mil-school-c89cf.web.app",
+      client_code_link: "https://github.com/thmanik/mil-club-client",
+      server_code_link: "https://github.com/thmanik/mil-club-server",
     },
     {
       id: 7,
@@ -93,6 +108,9 @@ const projects = [
       ],
       technologies: ["Tailwind", "React.js", "Firebase", "Node.js", "MongoDB", "Express"],
       images: ["/images/toybok/home.png", "/images/toybok/faq.png"],
+      live_link: "https://toy-box-8d4dc.web.app",
+      client_code_link: "https://github.com/thmanik/toy-box",
+      server_code_link: "https://github.com/thmanik/Toy-box-server",
     },
   ];
 
@@ -106,12 +124,13 @@ export default function PortfolioDetails() {
   if (!project) return notFound();
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl font-bold text-center text-gray-800">{project.title}</h2>
+    <div className=" mx-auto w-[95%] p-6 md:w-[90%] " >
+   
+      <h2 className="text-3xl  font-bold text-center text-gray-800">{project.title}</h2>
       
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-        <div className="rounded-lg overflow-hidden md:h-[480px] shadow-lg">
+        <div className="rounded-lg overflow-hidden md:h-[480px]  border-teal-700 border-2 shadow-lg"  data-aos="fade-up" >
           <Carousel showThumbs={false} autoPlay  infiniteLoop>
             {project?.images?.map((image, index) => (
               <div key={index}>
@@ -121,45 +140,81 @@ export default function PortfolioDetails() {
           </Carousel>
         </div>
 
-        <div>
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <h3 className="text-2xl font-semibold text-gray-800">Project Information</h3>
-            {/* link section */}
-            <div className=" flex gap-4">
-              <div className="flex items-center py-1 px-4  bg-[#00BBA7] text-white rounded-xl text-sm cursor-pointer hover:bg-[#2a4b47]  transition-all duration-300 transform hover:scale-103">Live Link <IoIosMale className="font-bold ms-1"/></div>
-              {/* client side link */}
-              <div className="flex items-center py-1 px-4  bg-[#00BBA7] text-white rounded-xl text-sm cursor-pointer hover:bg-[#2a4b47]  transition-all duration-300 transform hover:scale-103">Client Side Code<IoIosMale className="font-bold ms-1"/></div>
-              {/* server side link */}
-              <div className="flex items-center py-1 px-4  bg-[#00BBA7] text-white rounded-xl text-sm cursor-pointer hover:bg-[#2a4b47]  transition-all duration-300 transform hover:scale-103">Server Side Code <IoIosMale className="font-bold ms-1"/></div>
-            </div>
-            
-    <div>
-      <h1 className="text-start text-gray-500 mt-2">Project Description:</h1>
-      <ul className="list-none pl-0 space-y-2">
-        {project.description.map((point, index) => (
-          <li key={index} className="text-gray-500 flex items-start">
-            {/* Custom Dotted Bullet */}
-            {/* <span className="w-2 h-2 bg-gray-600 rounded-full mt-1 mr-3 flex-shrink-0"></span> */}
-            <IoMdRadioButtonOn className="text-[#00BBA7] w-4 h-4  rounded-full mt-1 mr-3 flex-shrink-0" />
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
+        <div className="bg-white rounded-lg p-2 md:p-6">
+        <div className="flex flex-wrap items-center gap-2 md:gap-4">
+  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
+    Project Information
+  </h3>
+  
+  {project?.confidential && (
+    <div className="text-sm sm:text-md md:text-lg my-2 mb-4 md:mb-4 text-[#00BBA7]">
+      (Confidential)
     </div>
+  )}
+</div>
 
-            <ul className="mt-4 text-gray-600 space-y-2">
-              <li><strong>Category:</strong> {project.category}</li>
-              <li><strong>Client:</strong> {project.client}</li>
-              <li><strong>Project Date:</strong> {project.date}</li>
-              <li>
-                <strong>Project URL:</strong> 
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                  {project.url}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  {/* Links Section */}
+  <div className="flex flex-wrap gap-4 mb-6" data-aos="fade-up"  >
+    {
+      project?.live_link && (
+        <a
+      href={project?.live_link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
+    >
+      <IoIosLink size={18} />
+      Live Site
+    </a>
+      )
+    }
+
+    {
+      project?.client_code_link && (
+        <a
+      href={project?.client_code_link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
+    >
+      <IoLogoGithub size={18} />
+      Client Code
+    </a>
+      )
+    }
+
+    {
+      project?.server_code_link &&(
+        <a
+      href={project?.server_code_link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
+    >
+      <IoLogoGithub size={18} />
+      Server Code
+    </a>
+      )
+    }
+ 
+  </div>
+
+  {/* Project Description */}
+  <div data-aos="fade-up" >
+    <h1 className="text-start text-gray-600 mb-3">Project Description:</h1>
+    <ul className="list-none pl-0 space-y-3">
+      {project.description.map((point, index) => (
+        <li key={index} className="text-gray-600 flex items-start">
+          <IoMdRadioButtonOn className="text-[#00BBA7] w-4 h-4 rounded-full mt-1 mr-3 flex-shrink-0" />
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+
+</div>
+
       </div>
     </div>
   );

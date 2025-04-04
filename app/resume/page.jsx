@@ -3,7 +3,7 @@ import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Resume = () => {
   return (
-    <div className="bg-gray-100 py-16">
+    <div className="bg-gray-100 py-8 md:py-16">
       <section id="resume" className="resume container mx-auto px-6 lg:px-20">
         {/* Section Title */}
         <div className="text-center mb-12" data-aos="fade-up">
@@ -17,9 +17,9 @@ const Resume = () => {
         {/* Resume Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Column (Summary & Education) */}
-          <div data-aos="fade-up" data-aos-delay="100">
+          <div >
             <h3 className="text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">Summary</h3>
-            <div className="bg-white p-6 shadow-lg rounded-lg">
+            <div className="bg-white p-6 shadow-lg rounded-lg" data-aos="fade-up" data-aos-delay="100">
               <h4 className="text-xl font-bold text-gray-800">Md Tofazzol Hossain Manik</h4>
               <p className="italic text-gray-600 mt-2">
               Frontend Web Developer with 1.5 years of professional experience, specializing in crafting fast, responsive, and visually appealing web applications using React.js, Next.js, TypeScript, and Tailwind CSS. Passionate about clean code, user experience, and modern web technologies.
@@ -37,15 +37,15 @@ const Resume = () => {
               </ul>
             </div>
 
-            <h3 className="text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mt-8 mb-4">Education</h3>
-            <div className="bg-white p-6 shadow-lg rounded-lg">
+            <h3 className="text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mt-8 mb-4" >Education</h3>
+            <div className="bg-white p-6 shadow-lg rounded-lg" data-aos="fade-up" data-aos-delay="100">
               <h4 className="font-bold">Complete Web Development Course</h4>
               <h5 className="text-gray-600">Programming Hero</h5>
               <p className="text-gray-500">Batch: 07</p>
               <p className="text-gray-600 mt-2">With a rigorous amount of JavaScript, HTML, CSS, React and applied these skills to build several projects.</p>
             </div>
 
-            <div className="bg-white p-6 shadow-lg rounded-lg mt-4">
+            <div className="bg-white p-6 shadow-lg rounded-lg mt-4" data-aos="fade-up" data-aos-delay="100">
             <h4 className="font-bold">Bachelor of Business Administration(BBA)</h4>
               <h5 className="text-gray-600">2020 - 2025</h5>
               <p className="text-gray-500">Govt. Titumir College</p>

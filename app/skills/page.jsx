@@ -91,15 +91,14 @@ import React from "react";
 import CountUp from "react-countup";
 import { 
   FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaGithub, FaFigma, 
-  FaVimeoSquare,
-  FaCaravan
+  
 } from "react-icons/fa";
 import { 
   SiNextdotjs, SiTypescript, SiExpress, SiRedux, SiTailwindcss, SiBootstrap, SiVisualstudio, 
   SiPostman, SiNetlify, SiJirasoftware, SiNpm 
 } from "react-icons/si";
 import { BsBrowserChrome } from "react-icons/bs";
-import { TbBrandCanva } from "react-icons/tb";
+
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500 text-6xl" />, percentage: 90 },
@@ -135,6 +134,7 @@ const tools = [
 ];
 
 const Skills = () => {
+ 
   return (
     <section className="py-12 bg-white text-gray-900">
       {/* Skills Section */}
@@ -143,7 +143,7 @@ const Skills = () => {
         <div className="w-16 h-1 bg-[#00BBA7] mx-auto mt-6"></div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-12 gap-5 mt-10 text-center">
           {skills.map((skill, index) => (
-            <div key={index} className="col-span-1 md:col-span-2 bg-gray-100 p-6 rounded-lg shadow-md">
+            <div key={index} className="col-span-1 md:col-span-2 bg-gray-100 p-6 rounded-lg shadow-md" data-aos="zoom-in-up">
               <div className="flex justify-center">{skill.icon}</div>
               <h2 className="text-4xl font-bold mt-3">
                 <CountUp start={0} end={skill.percentage} duration={2} delay={0.2} />%
@@ -160,7 +160,7 @@ const Skills = () => {
         <div className="w-16 h-1 bg-[#00BBA7] mx-auto mt-6"></div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10 text-center">
           {tools.map((tool, index) => (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md" data-aos="zoom-in-up">
               <div className="flex justify-center">{tool.icon}</div>
               <p className="mt-2 text-lg">{tool.name}</p>
             </div>
