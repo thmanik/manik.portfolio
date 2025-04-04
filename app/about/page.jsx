@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaAngleRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
+
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -12,10 +13,11 @@ const About = () => {
       easing: "ease-in-out",
     });
   }, []);
+
   return (
-    <div className="w-full px-4 py-10  mx-auto bg-gradient-to-r from-teal-50 to-white rounded-xl shadow-lg">
+    <div className="w-full px-4 py-10 mx-auto bg-gradient-to-r from-teal-50 to-white rounded-xl shadow-lg">
       {/* Title Section */}
-      <div className="text-center " data-aos="fade-in">
+      <div className="text-center" data-aos="fade-in">
         <p className="text-4xl font-extrabold text-gray-800">About Me</p>
         <p className="text-md md:text-lg text-gray-600 mt-2">
           Hello! My name is{" "}
@@ -31,18 +33,16 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 mt-10 gap-8 md:gap-16">
         {/* Profile Image Section */}
         <div className="col-span-12 md:col-span-5 flex justify-center md:justify-end">
-  <div className="relative w-full max-w-xs md:max-w-sm " data-aos="flip-left">
-   
-    <Image
-      src="/images/profile_manik.jpg"
-      className="relative w-full rounded-full border-3 border-[#1E2939] object-cover shadow-xl z-0"
-      alt="Profile Picture"
-      width={600}
-      height={800}
-    />
-  </div>
-</div>
-
+          <div className="relative w-full max-w-xs md:max-w-sm" data-aos="flip-left">
+            <Image
+              src="/images/profile_manik.jpg"
+              className="relative w-full rounded-full border-3 border-[#1E2939] object-cover shadow-xl z-0"
+              alt="Profile Picture"
+              width={600}
+              height={800}
+            />
+          </div>
+        </div>
 
         {/* Text Content */}
         <div className="col-span-12 md:col-span-7 text-start" data-aos="fade-right">
@@ -71,11 +71,10 @@ const About = () => {
             </p>
             <p className="flex gap-2 text-gray-800">
               <FaAngleRight className="w-5 h-5 text-[#00BBA7]" />
-              <strong>Email:</strong><span className="text-gray-700">thmanik1241@gmail.com</span>
+              <strong>Email:</strong>
+              <span className="text-gray-700">thmanik1241@gmail.com</span>
             </p>
           </div>
-
-         
         </div>
       </div>
     </div>
