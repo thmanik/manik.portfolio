@@ -93,25 +93,36 @@ const Header = () => {
 
       {/* Mobile Sidebar */}
       <div
-  className={`fixed top-0 right-0 w-3/4 h-full bg-[#1E2939] shadow-lg transform transition-transform duration-300 z-50 ${
+  className={`fixed top-0 right-0 w-4/5 max-w-xs h-full bg-[#1E2939] shadow-2xl transform transition-transform duration-300 z-50 rounded-l-xl ${
     isOpen ? "translate-x-0" : "translate-x-full"
   }`}
 >
-  <button className="absolute top-5 right-5 text-white" onClick={toggleMenu}>
+  {/* Close Button */}
+  <button
+    className="absolute top-5 right-5 text-white hover:text-teal-400 transition duration-300"
+    onClick={toggleMenu}
+  >
     <RxCross2 size={28} />
   </button>
 
-  <ul className="flex flex-col items-center mt-16 space-y-4 text-white">
+  {/* Menu Items */}
+  <ul className="flex flex-col items-center mt-20 space-y-5 px-4">
     {navItems.map((item, index) => (
       <li
         key={index}
         onClick={toggleMenu}
-        className={`w-3/4  ${pathname == item.link ? " border border-teal-700":" border  border-white"}rounded-lg text-center py-3 transition-all duration-200 hover:bg-teal-500 hover:text-white cursor-pointer`}
+        className={`w-full group ${
+          pathname === item.link
+            ? "border border-teal-500 bg-teal-600/10"
+            : "border border-white/10"
+        } rounded-xl text-center py-3 px-2 transition-all duration-300 hover:bg-teal-500/20 hover:border-teal-500 hover:scale-[1.03]`}
       >
         <Link
           href={item.link}
-          className={`block w-full text-lg ${
-            pathname == item.link ? "text-teal-700 font-semibold  " : "hover:text-white"
+          className={`block w-full text-lg tracking-wide ${
+            pathname === item.link
+              ? "text-teal-400 font-semibold"
+              : "text-white group-hover:text-teal-300"
           }`}
         >
           {item.name}
@@ -120,6 +131,7 @@ const Header = () => {
     ))}
   </ul>
 </div>
+
 
     </>
   );
