@@ -30,19 +30,20 @@ const About = () => {
       </div>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 mt-10 gap-8 md:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-12 mt-10 gap-8 md:px-10 md:gap-16">
         {/* Profile Image Section */}
         <div className="col-span-12 md:col-span-5 flex justify-center md:justify-end">
-          <div className="relative w-full max-w-xs md:max-w-sm" data-aos="flip-left">
-            <Image
-              src="/images/profile_manik.jpg"
-              className="relative w-full rounded-full border-3 border-[#1E2939] object-cover shadow-xl z-0"
-              alt="Profile Picture"
-              width={600}
-              height={800}
-            />
-          </div>
-        </div>
+  <div className="relative w-[80%] max-w-xs md:max-w-sm mx-auto" data-aos="flip-left">
+    <Image
+      src="/images/profile_manik.jpg"
+      className="w-full rounded-full border-4 border-[#1E2939] object-cover shadow-xl"
+      alt="Profile Picture"
+      width={600}
+      height={800}
+    />
+  </div>
+</div>
+
 
         {/* Text Content */}
         <div className="col-span-12 md:col-span-7 text-start" data-aos="fade-right">
