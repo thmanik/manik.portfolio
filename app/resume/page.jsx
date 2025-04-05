@@ -6,7 +6,7 @@ const Resume = () => {
   useEffect(() => {
     // Prevent any content hidden due to uninitialized animations
     if (typeof window !== "undefined" && (window ).AOS) {
-      (window ).AOS.refresh();
+      (window ).Aos.refresh();
     }
   }, []);
 
@@ -32,7 +32,7 @@ const Resume = () => {
           {/* Left Column */}
           <div>
             {/* Summary */}
-            <h3 className="text-xl sm:text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">
+            <h3 className="text-xl sm:text-2xl text-gray-800 font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">
               Summary
             </h3>
             <div
@@ -63,7 +63,7 @@ const Resume = () => {
             </div>
 
             {/* Education */}
-            <h3 className="text-xl sm:text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mt-8 mb-4">
+            <h3 className="text-xl sm:text-2xl text-gray-800 font-semibold border-l-4 border-[#00BBA7] pl-4 mt-8 mb-4">
               Education
             </h3>
 
@@ -72,7 +72,7 @@ const Resume = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h4 className="font-bold text-base sm:text-lg">
+              <h4 className="font-bold text-base text-gray-800 sm:text-lg">
                 Complete Web Development Course
               </h4>
               <h5 className="text-gray-600">Programming Hero</h5>
@@ -87,7 +87,7 @@ const Resume = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h4 className="font-bold text-base sm:text-lg">
+              <h4 className="font-bold text-base text-gray-800 sm:text-lg">
                 Bachelor of Business Administration (BBA)
               </h4>
               <h5 className="text-gray-600">2020 - 2025</h5>
@@ -100,12 +100,12 @@ const Resume = () => {
 
           {/* Right Column */}
           <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-xl sm:text-2xl font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">
+            <h3 className="text-xl sm:text-2xl text-gray-800 font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">
               Professional Experience
             </h3>
 
             <div className="bg-white p-6 shadow-lg rounded-lg">
-              <h4 className="font-bold text-base sm:text-lg">Frontend Developer</h4>
+              <h4 className="font-bold text-base text-gray-800 sm:text-lg">Frontend Developer</h4>
               <h5 className="text-gray-600">November 2023 - Present</h5>
               <p className="text-gray-500">Remote | Bangladesh</p>
               <p className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
