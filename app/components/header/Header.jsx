@@ -28,7 +28,7 @@ const Header = () => {
       <nav className="fixed top-0 left-0 w-full bg-gray-100 py-4 px-6 shadow-md z-50">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
-          <h1 className="text-3xl text-gray-900 font-bold">Manik</h1>
+          <h1 className="text-2xl text-gray-900 font-bold">Manik</h1>
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-6 text-gray-700">
