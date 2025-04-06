@@ -206,7 +206,7 @@ export default function PortfolioDetails() {
       {project.description.map((point, index) => (
         <li key={index} className="text-gray-600 flex items-start">
           <IoMdRadioButtonOn className="text-[#00BBA7] w-4 h-4 rounded-full mt-1 mr-3 flex-shrink-0" />
-          <span>{point}</span>
+          <span className="text-gray-600">{point}</span>
         </li>
       ))}
     </ul>

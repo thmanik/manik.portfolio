@@ -148,7 +148,7 @@ const Skills = () => {
               {/* <h2 className="text-4xl font-bold mt-3">
                 <CountUp start={0} end={skill.percentage} duration={2} delay={0.2} />%
               </h2> */}
-              <p className="mt-2 text-lg">{skill.name}</p>
+              <p className="mt-2 text-gray-800 text-lg">{skill.name}</p>
             </div>
           ))}
         </div>
@@ -162,7 +162,7 @@ const Skills = () => {
           {tools.map((tool, index) => (
             <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md" data-aos="zoom-in-up">
               <div className="flex justify-center">{tool.icon}</div>
-              <p className="mt-2 text-lg">{tool.name}</p>
+              <p className="mt-2 text-gray-800 text-lg">{tool.name}</p>
             </div>
           ))}
         </div>

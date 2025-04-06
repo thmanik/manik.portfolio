@@ -82,7 +82,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button onClick={toggleMenu}>
-              {isOpen ? <RxCross2 size={24} /> : <RxHamburgerMenu size={24} />}
+              {isOpen ? <RxCross2 className="text-gray-700" size={24} /> : <RxHamburgerMenu className="text-gray-700" size={24} />}
             </button>
           </div>
         </div>

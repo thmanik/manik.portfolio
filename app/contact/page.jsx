@@ -47,7 +47,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container bg-white mx-auto px-4 py-12">
       <div className="max-w-7xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
       Get in Touch
@@ -63,7 +63,7 @@ const ContactSection = () => {
           <div className="flex items-center gap-4 mb-4">
             <FaMapMarkerAlt className="text-[#00BBA7] text-2xl" />
             <div>
-              <h4 className="font-semibold text-lg">Address</h4>
+              <h4 className="font-semibold text-gray-700 text-lg">Address</h4>
               <p className="text-gray-600 text-sm">Uttara, Dhaka-1230, Bangladesh</p>
             </div>
           </div>
@@ -71,7 +71,7 @@ const ContactSection = () => {
           <div className="flex items-center gap-4 mb-4">
             <FaPhoneAlt className="text-[#00BBA7] text-2xl" />
             <div>
-              <h4 className="font-semibold text-lg">Call Us</h4>
+              <h4 className="font-semibold text-gray-700 text-lg">Call Us</h4>
               <p className="text-gray-600 text-sm">+88 0163-1205714</p>
             </div>
           </div>
@@ -79,7 +79,7 @@ const ContactSection = () => {
           <div className="flex items-center gap-4 mb-4">
             <FaEnvelope className="text-[#00BBA7] text-2xl" />
             <div>
-              <h4 className="font-semibold text-lg">Email Us</h4>
+              <h4 className="font-semibold text-gray-700 text-lg">Email Us</h4>
               <p className="text-gray-600 text-sm">thmanik1241@gmail.com</p>
             </div>
           </div>
@@ -103,26 +103,26 @@ const ContactSection = () => {
                 type="text"
                 placeholder="Your Name"
                 {...register("name", { required: "Name is required" })}
-                className="p-3 border border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
+                className="p-3 border text-gray-700 border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
               />
               <input
                 type="email"
                 placeholder="Your Email"
                 {...register("email", { required: "Email is required" })}
-                className="p-3 border border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
+                className="p-3 border text-gray-700 border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
               />
             </div>
             <input
               type="text"
               placeholder="Subject"
               {...register("subject", { required: "Subject is required" })}
-              className="p-3 border border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
+              className="p-3 border text-gray-700 border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
             />
             <textarea
               placeholder="Message"
               {...register("message", { required: "Message is required" })}
               rows={5}
-              className="p-3 border border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
+              className="p-3 border text-gray-700 border-gray-300 rounded-md focus:outline-[#00BBA7] w-full"
             ></textarea>
 
             <button
