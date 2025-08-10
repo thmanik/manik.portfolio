@@ -44,7 +44,7 @@ const Resume = () => {
                 Md Tofazzol Hossain Manik
               </h4>
               <p className="italic text-gray-600 mt-2 text-sm sm:text-base">
-                Frontend Web Developer with 1.5 years of professional experience, specializing in crafting fast, responsive, and visually appealing web applications using React.js, Next.js, TypeScript, and Tailwind CSS. Passionate about clean code, user experience, and modern web technologies.
+                I’m a web developer recently worked at SM Technology, mainly focusing on frontend development. I began my career at FlexSoftr, where I worked on e-commerce projects and improved my skills in building responsive and user-friendly websites using TypeScript, Next.js, Redux, and Tailwind CSS. I enjoy working with modern technologies and always strive to grow as a developer.
               </p>
               <ul className="mt-4 text-gray-600 space-y-2 text-sm sm:text-base">
                 <li className="flex items-center flex-wrap">
@@ -103,11 +103,25 @@ const Resume = () => {
             <h3 className="text-xl sm:text-2xl text-gray-800 font-semibold border-l-4 border-[#00BBA7] pl-4 mb-4">
               Professional Experience
             </h3>
+            <div className="bg-white p-6 shadow-lg rounded-lg mb-5">
+              <h4 className="font-bold text-base text-gray-800 sm:text-lg">Junior Web Developer</h4>
+              <div className="flex">
+                <h5 className="text-gray-700 font-bold">SM Technology<span className="text-gray-500"> (Onside | Dhaka, Bangladesh)</span></h5>
+              </div>
+              <h5 className="text-gray-600"></h5>
+              <p className="text-gray-500">April 2025 - July 2025</p>
+              <p className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                Worked as a frontend developer on multiple ongoing projects, building responsive and user-friendly interfaces using modern web technologies.
+              </p>
+            </div>
 
             <div className="bg-white p-6 shadow-lg rounded-lg">
               <h4 className="font-bold text-base text-gray-800 sm:text-lg">Frontend Developer</h4>
-              <h5 className="text-gray-600">November 2023 - Present</h5>
-              <p className="text-gray-500">Remote | Bangladesh</p>
+              <div className="flex">
+                <h5 className="text-gray-700 font-bold">Flex Softr <span className="text-gray-500">( Remote | Bangladesh)</span></h5>
+              </div>
+              <h5 className="text-gray-600"></h5>
+              <p className="text-gray-500">November 2023 - March 2025</p>
               <p className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
                 Developed and maintained eCommerce platform using Next.js, TypeScript, and Tailwind CSS, ensuring a seamless and responsive user experience. Implemented dynamic product search, authentication, and state management with Redux, optimizing performance and efficiency. Integrated an order tracking system for real-time order status updates and a warranty claim system to streamline customer support. Collaborated with cross-functional teams to enhance UI/UX and integrate APIs for smooth data handling.
               </p>

@@ -36,7 +36,7 @@ const About = () => {
   <div className="relative w-[80%] max-w-xs md:max-w-sm mx-auto" data-aos="flip-left">
     <Image
       src="/images/profile_manik.jpg"
-      className="w-full rounded-full border-4 border-[#1E2939] object-cover shadow-xl"
+      className="w-full rounded-full border-2 border-[#1E2939] object-cover shadow-xl"
       alt="Profile Picture"
       width={600}
       height={800}
