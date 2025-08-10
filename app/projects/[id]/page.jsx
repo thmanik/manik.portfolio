@@ -9,7 +9,6 @@ import { IoIosLink, IoLogoGithub, IoMdRadioButtonOn } from "react-icons/io";
 const Carousel = dynamic(() => import('react-responsive-carousel').then(mod => mod.Carousel), { ssr: false });
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
 const projects = [
     {
       id: 1,
@@ -115,106 +114,100 @@ const projects = [
   ];
 
 export default function PortfolioDetails() {
- 
   const { id } = useParams();
-
-
   const project = projects.find((p) => p.id == id);
 
   if (!project) return notFound();
 
   return (
-    <div className=" mx-auto w-[95%] p-6 md:w-[90%] " >
-   
-      <h2 className="text-3xl  font-bold text-center text-gray-800">{project.title}</h2>
-      
+    <div className="mx-auto w-[95%] p-6 md:w-[100%] bg-[#0B1623] min-h-screen text-white">
+      <h2 className="text-3xl font-bold text-center text-[#00C2FF]">{project.name}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-        <div className="rounded-lg overflow-hidden md:h-[480px]  border-teal-700 border-2 shadow-lg"  data-aos="fade-up" >
-          <Carousel showThumbs={false} autoPlay  infiniteLoop>
+        {/* Image Carousel */}
+        <div
+          className="rounded-lg overflow-hidden md:h-[480px] border-2 border-[#1E90FF] shadow-lg"
+          data-aos="fade-up"
+        >
+          <Carousel showThumbs={false} autoPlay infiniteLoop>
             {project?.images?.map((image, index) => (
               <div key={index}>
-                <img src={image} alt={`Project Image ${index + 1}`} className="rounded-lg" />
+                <img
+                  src={image}
+                  alt={`Project Image ${index + 1}`}
+                  className="rounded-lg"
+                />
               </div>
             ))}
           </Carousel>
         </div>
 
-        <div className="bg-white rounded-lg p-2 md:p-6">
-        <div className="flex flex-wrap items-center gap-2 md:gap-4">
-  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
-    Project Information
-  </h3>
-  
-  {project?.confidential && (
-    <div className="text-sm sm:text-md md:text-lg my-2 mb-4 md:mb-4 text-[#00BBA7]">
-      (Confidential)
-    </div>
-  )}
-</div>
+        {/* Project Info */}
+        <div className="bg-[#111C2D] rounded-lg p-2 md:p-6">
+          <div className="flex flex-wrap items-center gap-2 md:gap-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#00C2FF]">
+              Project Information
+            </h3>
 
-  {/* Links Section */}
-  <div className="flex flex-wrap gap-4 mb-6" data-aos="fade-up"  >
-    {
-      project?.live_link && (
-        <a
-      href={project?.live_link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
-    >
-      <IoIosLink size={18} />
-      Live Site
-    </a>
-      )
-    }
+            {project?.confidential && (
+              <div className="text-sm sm:text-md md:text-lg my-2 mb-4 text-[#1E90FF]">
+                (Confidential)
+              </div>
+            )}
+          </div>
 
-    {
-      project?.client_code_link && (
-        <a
-      href={project?.client_code_link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
-    >
-      <IoLogoGithub size={18} />
-      Client Code
-    </a>
-      )
-    }
+          {/* Links Section */}
+          <div className="flex flex-wrap gap-4 mb-6" data-aos="fade-up">
+            {project?.live_link && (
+              <a
+                href={project?.live_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00C2FF] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#1E90FF] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00C2FF] focus:ring-offset-2 focus:ring-offset-[#0B1623]"
+              >
+                <IoIosLink size={18} />
+                Live Site
+              </a>
+            )}
 
-    {
-      project?.server_code_link &&(
-        <a
-      href={project?.server_code_link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00BBA7] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#2a4b47] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BBA7] focus:ring-offset-2"
-    >
-      <IoLogoGithub size={18} />
-      Server Code
-    </a>
-      )
-    }
- 
-  </div>
+            {project?.client_code_link && (
+              <a
+                href={project?.client_code_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00C2FF] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#1E90FF] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00C2FF] focus:ring-offset-2 focus:ring-offset-[#0B1623]"
+              >
+                <IoLogoGithub size={18} />
+                Client Code
+              </a>
+            )}
 
-  {/* Project Description */}
-  <div data-aos="fade-up" >
-    <h1 className="text-start text-gray-600 mb-3">Project Description:</h1>
-    <ul className="list-none pl-0 space-y-3">
-      {project.description.map((point, index) => (
-        <li key={index} className="text-gray-600 flex items-start">
-          <IoMdRadioButtonOn className="text-[#00BBA7] w-4 h-4 rounded-full mt-1 mr-3 flex-shrink-0" />
-          <span className="text-gray-600">{point}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
+            {project?.server_code_link && (
+              <a
+                href={project?.server_code_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 py-2 px-6 cursor-pointer bg-[#00C2FF] text-white rounded-full text-sm font-medium shadow-md hover:bg-[#1E90FF] transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00C2FF] focus:ring-offset-2 focus:ring-offset-[#0B1623]"
+              >
+                <IoLogoGithub size={18} />
+                Server Code
+              </a>
+            )}
+          </div>
 
-
-</div>
-
+          {/* Project Description */}
+          <div data-aos="fade-up">
+            <h1 className="text-start text-[#B0B8C4] mb-3">Project Description:</h1>
+            <ul className="list-none pl-0 space-y-3">
+              {project.description.map((point, index) => (
+                <li key={index} className="flex items-start text-[#FFFFFF]">
+                  <IoMdRadioButtonOn className="text-[#00C2FF] w-4 h-4 rounded-full mt-1 mr-3 flex-shrink-0" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
