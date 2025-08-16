@@ -219,10 +219,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Footer note */}
-            <div className="mt-12 text-center text-sm text-[#9aa8b6]">
-              <span>© {new Date().getFullYear()} Your Name. Built with care.</span>
-            </div>
+           
           </div>
         </div>
       </div>

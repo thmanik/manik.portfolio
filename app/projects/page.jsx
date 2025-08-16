@@ -182,7 +182,7 @@ const Projects = () => {
             <div className="bg-[#0F172A] p-4 flex justify-center mt-auto">
               <button
                 onClick={() => handleNavigate(project.id)}
-                className="flex items-center justify-center text-white cursor-pointer px-5 py-2 bg-[#1E293B] hover:bg-[#00BBA7] hover:text-black rounded-full transition-colors duration-300"
+                className="flex items-center justify-center text-white cursor-pointer px-5 py-2 border border-teal-500 bg-[#1E293B] hover:bg-[#00BBA7] hover:text-black rounded-full transition-colors duration-300"
               >
                 <span>Details</span>
               </button>
